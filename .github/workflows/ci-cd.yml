@@ -1,9 +1,9 @@
 name: Python CI/CD Pipeline
 on:
 push:
-branches: [&quot;main&quot;]
+branches: ["main"]
 pull_request:
-branches: [&quot;main&quot;]
+branches: ["main"]
 jobs:
 build-test:
 runs-on: ubuntu-latest
