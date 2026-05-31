@@ -9,12 +9,12 @@ build-test:
 runs-on: ubuntu-latest
 steps:
 - name: Checkout code
-uses: actions/checkout@v4
+ uses: actions/checkout@v4
 - name: Set up Python
-uses: actions/setup-python@v5
+ uses: actions/setup-python@v5
 with:
 
-python-version: &quot;3.10&quot;
+python-version: "3.10";
 - name: Install dependencies
 run: |
 python -m pip install --upgrade pip
@@ -28,8 +28,8 @@ pytest --cov=app --cov-report=term --cov-fail-under=80
 - name: Validate script output
 run: |
 output=$(python app.py)
-if [ &quot;$output&quot; != &quot;5&quot; ]; then
-echo &quot;Unexpected output: $output&quot;
+if [ "$output" !=5 ]; then
+echo "Unexpected output: $output"
 exit 1
 fi
 deploy:
